@@ -1,0 +1,14 @@
+form {
+  box-sizing: border-box;
+  outline: none;
+  display: block;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+}
+
+form--large {
+  width: 15em;
+}

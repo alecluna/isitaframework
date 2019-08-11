@@ -1,12 +1,12 @@
 import React from "react";
-import form from "../Styles/form";
+import "../Styles/form.css";
 
 const Search = () => {
   return (
     <>
       <div>
         <input
-          style={form.textArea}
+          className="form"
           placeholder="Enter a word to see if it is a framework"
         />
       </div>
