@@ -1,4 +1,4 @@
-form {
+.form {
   box-sizing: border-box;
   outline: none;
   display: block;
@@ -9,6 +9,6 @@ form {
   margin-bottom: 10px;
 }
 
-form--large {
+.form--large {
   width: 15em;
 }

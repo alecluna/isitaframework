@@ -6,7 +6,7 @@ import "./Styles/container.css";
 const App = () => {
   return (
     <div className="container">
-      <h1 style={{ paddingBottom: 50 }}>Is it a framework?</h1>
+      <h1>Is it a framework?</h1>
       <Search />
     </div>
   );
