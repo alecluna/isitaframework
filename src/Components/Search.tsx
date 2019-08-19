@@ -1,11 +1,12 @@
-import React from "react";
-import FrameworkData from "../Components/FrameworkData";
+import * as React from "react";
+import { SyntheticEvent } from "react";
+import FrameworkData from "./FrameworkData";
 import "../Styles/form.css";
 import { useForm } from "../Hooks/useForm";
 
-const Search = () => {
-  const onSubmitSearch = () => {
-    console.log(`Framework submitted! ${inputs.framework}`);
+const Search = (): JSX.Element => {
+  const onSubmitSearch = (): SyntheticEvent => {
+    return inputs.framework;
   };
 
   const { inputs, handleChange, handleSubmit } = useForm(onSubmitSearch);
