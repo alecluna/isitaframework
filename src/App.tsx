@@ -1,6 +1,5 @@
-import React from "react";
+import * as React from "react";
 import Search from "./Components/Search";
-import "./App.css";
 import "./Styles/container.css";
 
 const App = () => {

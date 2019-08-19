@@ -4,11 +4,17 @@
   display: block;
   padding: 7px;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.5px solid #ddd;
   background: transparent;
   margin-bottom: 10px;
 }
 
 .form--large {
-  width: 15em;
+  width: 25em;
+}
+
+.form--large--input {
+  outline: none;
+  border: none;
+  font-size: 2em;
 }
