@@ -1,6 +1,5 @@
 import * as React from "react";
 import App from "../App";
-import Search from "../Components/Search";
 import Enzyme from "enzyme";
 import { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
@@ -12,13 +11,8 @@ describe("App Container Component", () => {
     const wrapper = shallow(<App />);
 
     expect(wrapper.exists()).toBe(true);
-  });
-});
-
-describe("Search Component", () => {
-  it("renders Search", () => {
-    const searchWrapper = shallow(<Search />);
-
-    expect(searchWrapper.exists()).toBe(true);
+    expect(wrapper.html()).toMatch(
+      '<div class="container"><h1>Is it a framework?</h1>Loading...</div>'
+    );
   });
 });

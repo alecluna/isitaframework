@@ -1,15 +1,8 @@
 import { useState, SyntheticEvent } from "react";
 
-//custom and reusable form hook
-export const useForm = (callback: any): any => {
+//custom and reusable event handler hook for our form
+export const useForm = (): any => {
   const [inputs, setInputs] = useState<Object | string>({});
-
-  const handleSubmit = (event: SyntheticEvent) => {
-    if (event) {
-      event.preventDefault();
-    }
-    callback();
-  };
 
   const handleChange = (event: SyntheticEvent) => {
     event.persist();
@@ -22,7 +15,6 @@ export const useForm = (callback: any): any => {
   };
 
   return {
-    handleSubmit,
     handleChange,
     inputs
   };
