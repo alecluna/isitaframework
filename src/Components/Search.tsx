@@ -1,19 +1,30 @@
 import * as React from "react";
-import { SyntheticEvent } from "react";
 import FrameworkData from "./FrameworkData";
 import "../Styles/form.css";
 import { useForm } from "../Hooks/useForm";
+import { useFetch } from "../Hooks/useFetch";
 
 const Search = (): JSX.Element => {
-  const onSubmitSearch = (): SyntheticEvent => {
-    return inputs.framework;
-  };
+  const { inputs, handleChange } = useForm();
 
-  const { inputs, handleChange, handleSubmit } = useForm(onSubmitSearch);
+  const apiURL =
+    "https://deinrgqhvb.execute-api.us-west-1.amazonaws.com/default/getFrameworks";
+
+  const fetchResponse = useFetch(apiURL, { isLoading: true, data: null });
+
+  if (fetchResponse.isLoading === true || fetchResponse.data === null) {
+    return <>Loading...</>;
+  }
+
+  const response: JSX.Element = fetchResponse.data.Items.map(
+    (items: any, index: number) => {
+      return <li key={index}> {items.frameworkID} </li>;
+    }
+  );
 
   return (
     <>
-      <form className="form form--large" onSubmit={handleSubmit}>
+      <form className="form form--large" onSubmit={() => fetchResponse}>
         <input
           type="text"
           name="framework"
@@ -23,8 +34,7 @@ const Search = (): JSX.Element => {
           value={inputs.framework || ""}
         />
       </form>
-
-      <FrameworkData searchTerm={inputs.framework} />
+      <FrameworkData searchTerm={response} />
     </>
   );
 };
