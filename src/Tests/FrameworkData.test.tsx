@@ -6,8 +6,8 @@ import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("Search Component", () => {
-  it("renders Search", () => {
+describe("<FrameworkData />", () => {
+  it("renders Framework Data child component", () => {
     const wrapper = shallow(<FrameworkData searchTerm={<li>test value</li>} />);
     expect(wrapper.exists()).toBeTruthy();
   });

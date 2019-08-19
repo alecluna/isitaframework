@@ -6,7 +6,7 @@ import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("Search Component", () => {
+describe("<Search />", () => {
   it("renders Search", () => {
     const searchWrapper = shallow(<Search />);
     expect(searchWrapper.exists()).toBeTruthy();

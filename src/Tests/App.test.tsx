@@ -6,7 +6,7 @@ import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("App Container Component", () => {
+describe("<App />", () => {
   it("renders App", () => {
     const wrapper = shallow(<App />);
 
