@@ -24,7 +24,13 @@ const Search = (): JSX.Element => {
 
   return (
     <>
-      <form className="form form--large" onSubmit={() => fetchResponse}>
+      <form
+        className="form form--large"
+        onSubmit={e => {
+          e.preventDefault();
+          return fetchResponse;
+        }}
+      >
         <input
           type="text"
           name="framework"

@@ -4,7 +4,7 @@ import { useState, SyntheticEvent } from "react";
 export const useForm = (): any => {
   const [inputs, setInputs] = useState<Object | string>({});
 
-  const handleChange = (event: SyntheticEvent) => {
+  const handleChange = (event: SyntheticEvent): void => {
     event.persist();
     setInputs((inputs: any) => ({
       ...inputs,
