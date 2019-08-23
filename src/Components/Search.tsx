@@ -1,13 +1,13 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import FrameworkData from "./FrameworkData";
 import "../Styles/form.css";
 import { useForm } from "../Hooks/useForm";
+import FrameworkData from "./FrameworkData";
 
 const Search = (): JSX.Element => {
   //custom hook
   const { inputs, handleChange } = useForm();
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any>([]);
   const [isError, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [url, setUrl] = useState("");
@@ -42,20 +42,22 @@ const Search = (): JSX.Element => {
       <form
         className="form form--large"
         onSubmit={e => {
-          getData(inputs.framework);
           e.preventDefault();
+          getData(inputs.framework);
         }}
       >
-        <input
-          type="text"
-          name="framework"
-          className="form--large--input"
-          placeholder="Enter a word to see if it is a framework"
-          onChange={handleChange}
-          value={inputs.framework || ""}
-        />
+        <label>
+          <input
+            type="text"
+            name="framework"
+            className="form--large--input"
+            placeholder="Let's find out..."
+            onChange={handleChange}
+            value={inputs.framework || ""}
+          />
+        </label>
       </form>
-      {isLoading ? <>Loading...</> : <FrameworkData searchTerm={data} />}
+      {/* {isLoading ? <>Loading...</> : <>{data._source._framework_name}</>} */}
       {isError && <>Error connecting...</>}
     </>
   );

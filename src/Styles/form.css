@@ -1,12 +1,28 @@
 .form {
   box-sizing: border-box;
-  outline: none;
   display: block;
   padding: 7px;
-  border: none;
-  border-bottom: 0.5px solid #ddd;
+  border: 0.5px solid #ddd;
+  border-radius: 25px;
   background: transparent;
   margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(163, 163, 163, 0.3),
+    0 6px 6px rgba(142, 142, 142, 0.22);
+}
+
+label {
+  position: relative;
+}
+
+label:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  width: 30px;
+  background: url("../Assets/search.svg") center / contain no-repeat;
+  height: 30px;
 }
 
 .form--large {
@@ -17,4 +33,5 @@
   outline: none;
   border: none;
   font-size: 2em;
+  padding-left: 40px;
 }
