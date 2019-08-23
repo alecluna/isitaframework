@@ -1,13 +1,13 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../Styles/form.css";
 import { useForm } from "../Hooks/useForm";
 import FrameworkData from "./FrameworkData";
 
-const Search = (): JSX.Element => {
+const Search = (): any => {
   //custom hook
   const { inputs, handleChange } = useForm();
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<any>([{}]);
   const [isError, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [url, setUrl] = useState("");
@@ -30,6 +30,7 @@ const Search = (): JSX.Element => {
       });
       const response = await result.json();
       setData(response);
+      console.log(data[0]);
     } catch (error) {
       console.log(error);
       setError(true);
@@ -57,7 +58,15 @@ const Search = (): JSX.Element => {
           />
         </label>
       </form>
-      {/* {isLoading ? <>Loading...</> : <>{data._source._framework_name}</>} */}
+      {isLoading ? (
+        <>Loading...</>
+      ) : (
+        <>
+          {data[0]._index} - {data[0]._score} -{" "}
+          {data[0]._sources.framework_names}
+        </>
+      )}
+      {/* {isLoading ? <>Loading...</> : <FrameworkData data={data} />} */}
       {isError && <>Error connecting...</>}
     </>
   );
