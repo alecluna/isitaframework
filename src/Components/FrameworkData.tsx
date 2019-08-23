@@ -1,9 +1,5 @@
 import * as React from "react";
 
-interface IProps {
-  searchTerm: JSX.Element;
-}
-
-const FrameworkData = (props: IProps) => <>{props.searchTerm}</>;
+const FrameworkData = ({ searchTerm }: any): JSX.Element => <>{searchTerm}</>;
 
 export default FrameworkData;
