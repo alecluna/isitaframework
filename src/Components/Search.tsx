@@ -5,7 +5,6 @@ import { useForm } from "../Hooks/useForm";
 import FrameworkData from "./FrameworkData";
 
 const Search = (): any => {
-  //custom hook
   const intitialState: Object[] = [];
   const { inputs, handleChange } = useForm();
   const [data, setData] = useState<any>(intitialState);
@@ -18,15 +17,15 @@ const Search = (): any => {
 
     try {
       const result = await fetch(
-        `https://deinrgqhvb.execute-api.us-west-1.amazonaws.com/default/getFrameworks?queryString=${input}`,
+        `https://deinrgqhvb.execute-api.us-west-1.amazonaws.com/default/getFrameworks?q=${input}`,
         {
           method: "GET",
           headers: {
-            //TODO add this as a .env
             "x-api-key": "a3o8lc8AFUMD2bve9BmH4RKnZMs0qLc84OHMFiIc"
           }
         }
       );
+
       if (result.ok) {
         const response = await result.json();
         setData(response);

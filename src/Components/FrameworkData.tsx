@@ -6,8 +6,7 @@ const FrameworkData = ({ data }: any): any => (
       data.map((framework: any, index: number) => {
         return (
           <li key={index}>
-            {framework._index} - {framework._score} -
-            {framework._source.framework_name} -{framework._source.platform}
+            {framework.framework_name} - {framework.platform}
           </li>
         );
       })
