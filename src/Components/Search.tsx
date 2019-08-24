@@ -63,7 +63,7 @@ const Search = (): any => {
         <>Loading...</>
       ) : (
         <>
-          {data[data.length()]._index} - {data._score} -{" "}
+          {data[0]._index} - {data[0]._score} -{" "}
           {/* {data[0]._sources.framework_names} */}
         </>
       )}
