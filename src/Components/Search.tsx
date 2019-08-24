@@ -11,29 +11,30 @@ const Search = (): any => {
   const [data, setData] = useState<any>(intitialState);
   const [isError, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const [url, setUrl] = useState("");
 
   const getData = async (input: string) => {
     setError(false);
     setLoading(true);
 
-    setUrl(
-      `https://deinrgqhvb.execute-api.us-west-1.amazonaws.com/default/getFrameworks?queryString=${input}`
-    );
-
     try {
-      const result = await fetch(url, {
-        method: "GET",
-        headers: {
-          //TODO add this as a .env
-          "x-api-key": "a3o8lc8AFUMD2bve9BmH4RKnZMs0qLc84OHMFiIc"
+      const result = await fetch(
+        `https://deinrgqhvb.execute-api.us-west-1.amazonaws.com/default/getFrameworks?queryString=${input}`,
+        {
+          method: "GET",
+          headers: {
+            //TODO add this as a .env
+            "x-api-key": "a3o8lc8AFUMD2bve9BmH4RKnZMs0qLc84OHMFiIc"
+          }
         }
-      });
-      const response = await result.json();
-      setData([...data, response]);
-      console.log(data[0]);
+      );
+      if (result.ok) {
+        const response = await result.json();
+        setData(response);
+      } else {
+        setError(true);
+      }
     } catch (error) {
-      console.log(error);
+      console.trace(error);
       setError(true);
     }
     setLoading(false);
@@ -59,15 +60,7 @@ const Search = (): any => {
           />
         </label>
       </form>
-      {isLoading ? (
-        <>Loading...</>
-      ) : (
-        <>
-          {data[data.length()]._index} - {data._score} -{" "}
-          {/* {data[0]._sources.framework_names} */}
-        </>
-      )}
-      {/* {isLoading ? <>Loading...</> : <FrameworkData data={data} />} */}
+      {isLoading ? <>Loading...</> : <FrameworkData data={data} />}
       {isError && <>Error connecting...</>}
     </>
   );
