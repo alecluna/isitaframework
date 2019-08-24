@@ -6,8 +6,9 @@ import FrameworkData from "./FrameworkData";
 
 const Search = (): any => {
   //custom hook
+  const intitialState: Object[] = [];
   const { inputs, handleChange } = useForm();
-  const [data, setData] = useState<any>([{}]);
+  const [data, setData] = useState<any>(intitialState);
   const [isError, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [url, setUrl] = useState("");
@@ -29,7 +30,7 @@ const Search = (): any => {
         }
       });
       const response = await result.json();
-      setData(response);
+      setData([...data, response]);
       console.log(data[0]);
     } catch (error) {
       console.log(error);
@@ -62,8 +63,8 @@ const Search = (): any => {
         <>Loading...</>
       ) : (
         <>
-          {data[0]._index} - {data[0]._score} -{" "}
-          {data[0]._sources.framework_names}
+          {data[data.length()]._index} - {data._score} -{" "}
+          {/* {data[0]._sources.framework_names} */}
         </>
       )}
       {/* {isLoading ? <>Loading...</> : <FrameworkData data={data} />} */}
