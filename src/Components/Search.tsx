@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import "../Styles/form.css";
+import "../Styles/framework-data.css";
 import { useForm } from "../Hooks/useForm";
 import FrameworkData from "./FrameworkData";
 
@@ -59,8 +60,10 @@ const Search = (): any => {
           />
         </label>
       </form>
-      {isLoading ? <>Loading...</> : <FrameworkData data={data} />}
-      {isError && <>Error connecting...</>}
+      <div className="framework-container">
+        {isLoading ? <>Loading...</> : <FrameworkData data={data} />}
+        {isError && <>Error connecting...</>}
+      </div>
     </>
   );
 };
