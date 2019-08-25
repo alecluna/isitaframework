@@ -21,7 +21,7 @@ const Search = (): any => {
         {
           method: "GET",
           headers: {
-            "x-api-key": "a3o8lc8AFUMD2bve9BmH4RKnZMs0qLc84OHMFiIc"
+            "x-api-key": `${process.env.REACT_APP_AWS_LAMBDA}`
           }
         }
       );
