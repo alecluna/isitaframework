@@ -1,37 +1,39 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../Styles/form.css";
 import { useForm } from "../Hooks/useForm";
 import FrameworkData from "./FrameworkData";
 
-const Search = (): JSX.Element => {
-  //custom hook
+const Search = (): any => {
+  const intitialState: Object[] = [];
   const { inputs, handleChange } = useForm();
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<any>(intitialState);
   const [isError, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const [url, setUrl] = useState("");
 
   const getData = async (input: string) => {
     setError(false);
     setLoading(true);
 
-    setUrl(
-      `https://deinrgqhvb.execute-api.us-west-1.amazonaws.com/default/getFrameworks?queryString=${input}`
-    );
-
     try {
-      const result = await fetch(url, {
-        method: "GET",
-        headers: {
-          //TODO add this as a .env
-          "x-api-key": "a3o8lc8AFUMD2bve9BmH4RKnZMs0qLc84OHMFiIc"
+      const result = await fetch(
+        `https://deinrgqhvb.execute-api.us-west-1.amazonaws.com/default/getFrameworks?q=${input}`,
+        {
+          method: "GET",
+          headers: {
+            "x-api-key": "a3o8lc8AFUMD2bve9BmH4RKnZMs0qLc84OHMFiIc"
+          }
         }
-      });
-      const response = await result.json();
-      setData(response);
+      );
+
+      if (result.ok) {
+        const response = await result.json();
+        setData(response);
+      } else {
+        setError(true);
+      }
     } catch (error) {
-      console.log(error);
+      console.trace(error);
       setError(true);
     }
     setLoading(false);
@@ -57,7 +59,7 @@ const Search = (): JSX.Element => {
           />
         </label>
       </form>
-      {/* {isLoading ? <>Loading...</> : <>{data._source._framework_name}</>} */}
+      {isLoading ? <>Loading...</> : <FrameworkData data={data} />}
       {isError && <>Error connecting...</>}
     </>
   );

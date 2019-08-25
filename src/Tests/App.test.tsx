@@ -7,12 +7,14 @@ import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("<App />", () => {
-  it("renders App", () => {
+  it("renders App .container", () => {
     const wrapper = shallow(<App />);
-
     expect(wrapper.exists()).toBe(true);
-    expect(wrapper.html()).toMatch(
-      '<div class="container"><h1>Is it a framework?</h1>Loading...</div>'
-    );
+    expect(wrapper.find(".container")).toHaveLength(1);
+  });
+
+  it("renders App header", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(".animated.div")).toBeTruthy();
   });
 });
