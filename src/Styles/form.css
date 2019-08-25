@@ -3,12 +3,12 @@
   display: block;
   padding: 7px;
   border: 0.5px solid #ddd;
-  border-radius: 15px;
+  border-radius: 25px;
   background: transparent;
   margin-bottom: 10px;
   background-color: white;
-  box-shadow: 0 10px 20px rgba(163, 163, 163, 0.3),
-    0 6px 6px rgba(142, 142, 142, 0.22);
+  box-shadow: 0 10px 20px rgba(186, 186, 186, 0.3),
+    0 6px 6px rgba(193, 193, 193, 0.22);
 }
 
 label {
@@ -26,7 +26,7 @@ label:before {
 }
 
 .form--large {
-  width: 25em;
+  width: 100%;
 }
 
 .form--large--input {
