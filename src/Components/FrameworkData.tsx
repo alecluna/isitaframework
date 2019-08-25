@@ -3,7 +3,10 @@ import "../Styles/framework-data.css";
 import { useSpring, animated } from "react-spring";
 
 const FrameworkData = ({ data }: any): any => {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const props = useSpring({
+    to: { opacity: 1, transform: "translate3d(0,0,0)" },
+    from: { opacity: 0, transform: "translate3d(0,20px,0)" }
+  });
 
   return (
     <>

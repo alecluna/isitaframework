@@ -11,6 +11,24 @@
     0 6px 6px rgba(193, 193, 193, 0.22);
 }
 
+.form--large {
+  width: 100%;
+}
+
+/* @media only screen and (max-device-width: 568px) and (orientation: portrait) {
+  .form--large {
+    width: 275px;
+    padding: 10px;
+  }
+} */
+
+.form--large--input {
+  outline: none;
+  border: none;
+  font-size: 2em;
+  padding-left: 40px;
+}
+
 label {
   position: relative;
 }
@@ -23,15 +41,4 @@ label:before {
   width: 30px;
   background: url("../Assets/search.svg") center / contain no-repeat;
   height: 30px;
-}
-
-.form--large {
-  width: 100%;
-}
-
-.form--large--input {
-  outline: none;
-  border: none;
-  font-size: 2em;
-  padding-left: 40px;
 }
