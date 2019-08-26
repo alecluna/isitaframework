@@ -15,13 +15,6 @@
   width: 100%;
 }
 
-@media only screen and (max-device-width: 568px) and (orientation: portrait) {
-  .form--large {
-    width: 275px;
-    padding: 10px;
-  }
-}
-
 .form--large--input {
   outline: none;
   border: none;
@@ -41,4 +34,17 @@ label:before {
   width: 30px;
   background: url("../Assets/search.svg") center / contain no-repeat;
   height: 30px;
+}
+
+@media only screen and (max-device-width: 568px) {
+  .form--large {
+    width: 300px;
+  }
+  label {
+    width: 200px;
+  }
+
+  input {
+    width: 200px;
+  }
 }
