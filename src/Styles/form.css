@@ -11,6 +11,17 @@
     0 6px 6px rgba(193, 193, 193, 0.22);
 }
 
+.form--large {
+  width: 100%;
+}
+
+.form--large--input {
+  outline: none;
+  border: none;
+  font-size: 2em;
+  padding-left: 40px;
+}
+
 label {
   position: relative;
 }
@@ -25,13 +36,15 @@ label:before {
   height: 30px;
 }
 
-.form--large {
-  width: 100%;
-}
+@media only screen and (max-device-width: 568px) {
+  .form--large {
+    width: 300px;
+  }
+  label {
+    width: 200px;
+  }
 
-.form--large--input {
-  outline: none;
-  border: none;
-  font-size: 2em;
-  padding-left: 40px;
+  input {
+    width: 200px;
+  }
 }
