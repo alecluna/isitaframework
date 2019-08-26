@@ -26,7 +26,7 @@ label {
   position: relative;
 }
 
-label:before {
+label:before #search {
   content: "";
   position: absolute;
   left: 5px;
