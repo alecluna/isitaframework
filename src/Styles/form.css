@@ -15,12 +15,12 @@
   width: 100%;
 }
 
-/* @media only screen and (max-device-width: 568px) and (orientation: portrait) {
+@media only screen and (max-device-width: 568px) and (orientation: portrait) {
   .form--large {
     width: 275px;
     padding: 10px;
   }
-} */
+}
 
 .form--large--input {
   outline: none;

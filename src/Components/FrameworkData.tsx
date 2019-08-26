@@ -16,7 +16,7 @@ const FrameworkData = ({ data }: any): any => {
             <div key={index}>
               <animated.div style={props}>
                 <li className="framework-list">
-                  {framework.framework_name} - {framework.platform}
+                  {framework.name} - {framework.language}
                 </li>
               </animated.div>
             </div>

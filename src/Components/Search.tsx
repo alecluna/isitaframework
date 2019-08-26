@@ -30,6 +30,7 @@ const Search = (): any => {
       if (result.ok) {
         const response = await result.json();
         setData(response);
+        console.log(response);
       } else {
         setError(true);
       }
