@@ -1,0 +1,23 @@
+body.light-mode {
+  background-color: #fafafa;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #10171d;
+  color: #fafafa;
+}
+
+.dark-mode-toggle > button {
+  color: #999;
+}
+
+.dark-mode-toggle > button:last-child {
+  color: lightblue;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  margin: 0 auto;
+}
