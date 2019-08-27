@@ -50,7 +50,7 @@ const Search = (): any => {
           getData(inputs.framework);
         }}
       >
-        <label>
+        <label id="search">
           <input
             type="text"
             name="framework"
