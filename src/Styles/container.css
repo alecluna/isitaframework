@@ -8,6 +8,14 @@
   width: 100%;
 }
 
+.container-darkmode-toggle {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-start;
+  padding: 20px;
+}
+
 @media only screen and (max-device-width: 568px) {
   .container {
     display: flex;
