@@ -1,8 +1,10 @@
 import * as React from "react";
 import "../Styles/framework-data.css";
+import ListItem from "../Components/ListItem";
 import { useSpring, animated } from "react-spring";
+import { NodePath } from "@babel/core";
 
-const FrameworkData = ({ data }: any): any => {
+const FrameworkData = ({ data }: any = []): any => {
   const props = useSpring({
     to: { opacity: 1, transform: "translate3d(0,0,0)" },
     from: { opacity: 0, transform: "translate3d(0,20px,0)" }
@@ -16,14 +18,17 @@ const FrameworkData = ({ data }: any): any => {
             <div key={index}>
               <animated.div style={props}>
                 <li className="framework-list">
-                  {framework.name} - {framework.language}
+                  <ListItem
+                    name={framework.name}
+                    language={framework.language}
+                  />
                 </li>
               </animated.div>
             </div>
           );
         })
       ) : (
-        <p>No results</p>
+        <p>Nope, but it probably will be soon...</p>
       )}
     </>
   );
