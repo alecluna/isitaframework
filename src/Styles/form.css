@@ -27,19 +27,15 @@ label {
 }
 
 label:before #search {
-  content: "";
   position: absolute;
   left: 5px;
   bottom: 0;
   width: 30px;
-  background: url("../Assets/search.svg") center / contain no-repeat;
   height: 30px;
+  background: url("../Assets/search.svg") center / contain no-repeat;
 }
 
 @media only screen and (max-device-width: 568px) {
-  .form--large {
-    width: 300px;
-  }
   label {
     width: 200px;
   }
