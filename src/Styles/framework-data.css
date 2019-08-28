@@ -1,5 +1,6 @@
 .framework-container {
   margin-top: 10%;
+  overflow: overlay;
 }
 
 .framework-list {

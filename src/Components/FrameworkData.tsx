@@ -2,7 +2,6 @@ import * as React from "react";
 import "../Styles/framework-data.css";
 import ListItem from "../Components/ListItem";
 import { useSpring, animated } from "react-spring";
-import { NodePath } from "@babel/core";
 
 const FrameworkData = ({ data }: any = []): any => {
   const props = useSpring({
