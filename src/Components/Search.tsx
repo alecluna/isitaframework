@@ -4,6 +4,7 @@ import "../Styles/form.css";
 import "../Styles/framework-data.css";
 import { useForm } from "../Hooks/useForm";
 import FrameworkData from "./FrameworkData";
+import Labels from "../Components/Labels";
 
 const Search = (): any => {
   const intitialState: Object[] = [];
@@ -62,7 +63,14 @@ const Search = (): any => {
         </label>
       </form>
       <div className="framework-container">
-        {isLoading ? <>Loading...</> : <FrameworkData data={data} />}
+        {isLoading ? (
+          <>Loading...</>
+        ) : (
+          <>
+            <Labels />
+            <FrameworkData data={data} />
+          </>
+        )}
         {isError && <>Error connecting...</>}
       </div>
     </>

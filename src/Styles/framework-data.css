@@ -1,10 +1,33 @@
 .framework-container {
-  margin-top: 10%;
+  margin-top: 5%;
   overflow: overlay;
 }
 
 .framework-list {
   list-style-type: none;
-  padding: 10px;
   font-size: 1.5em;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 10px 20px 20px;
+  list-style-type: none;
+  text-align: left;
+}
+
+@media only screen and (max-device-width: 568px) {
+  .framework-list {
+    list-style-type: none;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  .labels {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    list-style-type: none;
+    text-align: left;
+  }
 }
