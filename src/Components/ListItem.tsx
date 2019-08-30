@@ -1,4 +1,5 @@
 import * as React from "react";
+import "../Styles/list-item.css";
 
 const ListItem = ({ name, language }: any): JSX.Element => {
   const capitalize = (string: string): string => {
@@ -8,8 +9,8 @@ const ListItem = ({ name, language }: any): JSX.Element => {
   return (
     <>
       <div className="list-container">
-        <>{capitalize(name)} - </>
-        <>{capitalize(language)}</>
+        <span>{capitalize(name)} </span>
+        <span>{capitalize(language)}</span>
       </div>
       <hr
         style={{

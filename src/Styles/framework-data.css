@@ -8,3 +8,19 @@
   padding: 10px;
   font-size: 1.5em;
 }
+
+.labels {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  list-style-type: none;
+  text-align: left;
+}
+
+@media only screen and (max-device-width: 350px) {
+  .framework-list {
+    list-style-type: none;
+    padding: 10px;
+    font-size: 1.2em;
+  }
+}

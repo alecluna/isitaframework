@@ -22,7 +22,7 @@ body {
 
 @media only screen and (max-device-width: 350px) {
   .header {
-    font-size: 2em;
+    font-size: 1.2em;
     width: 100%;
   }
 }

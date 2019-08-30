@@ -1,6 +1,6 @@
 .list-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   margin: 10px;
+  list-style-type: none;
 }

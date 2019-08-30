@@ -2,6 +2,7 @@ import * as React from "react";
 import "../Styles/framework-data.css";
 import ListItem from "../Components/ListItem";
 import { useSpring, animated } from "react-spring";
+import Labels from "../Components/Labels";
 
 const FrameworkData = ({ data }: any = []): any => {
   const props = useSpring({
@@ -16,6 +17,7 @@ const FrameworkData = ({ data }: any = []): any => {
           return (
             <div key={index}>
               <animated.div style={props}>
+                <Labels />
                 <li className="framework-list">
                   <ListItem
                     name={framework.name}
