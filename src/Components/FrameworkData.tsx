@@ -3,7 +3,7 @@ import "../Styles/framework-data.css";
 import ListItem from "../Components/ListItem";
 import { useSpring, animated } from "react-spring";
 
-const FrameworkData = ({ data }: any = []): any => {
+const FrameworkData = ({ data }: any = []): JSX.Element => {
   const props = useSpring({
     to: { opacity: 1, transform: "translate3d(0,0,0)" },
     from: { opacity: 0, transform: "translate3d(0,20px,0)" }
