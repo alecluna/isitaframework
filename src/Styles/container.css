@@ -4,10 +4,11 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  margin-top: 100px;
 }
 
 .container-darkmode-toggle {
-  padding: 10px 0 0 5px;
+  padding: 15px 0 0 15px;
 }
 
 @media only screen and (max-device-width: 568px) {
@@ -17,6 +18,6 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
   }
 }

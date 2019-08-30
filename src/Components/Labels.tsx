@@ -3,10 +3,10 @@ import "../Styles/framework-data.css";
 
 const Labels = (): JSX.Element => (
   <>
-    <ul className="labels">
-      <li>Name</li>
-      <li>Package</li>
-    </ul>
+    <div className="labels">
+      <div>Name</div>
+      <div>Language</div>
+    </div>
   </>
 );
 
